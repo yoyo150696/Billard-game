@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -9,16 +10,26 @@ public class Timer_s : MonoBehaviour
     public GetName gn;
     public TextMeshProUGUI t_timer;
     public GameOverScreen go;
-    float timeLeft = 30.0f;
+    float timeLeft = 20.0f;
+
+    bool isUpdateEnable = false;
+
+    public void StartTimer(){
+        isUpdateEnable = true;
+        
+    }
   
     // Update is called once per frame
     void Update()
     {
-        timeLeft -= Time.deltaTime;
-        t_timer.text = (timeLeft).ToString("0");
-        if(timeLeft < 1){
-            int score = gn.Sc(8);
-            go.Setup(score);
+        if(isUpdateEnable){
+            timeLeft -= Time.deltaTime;
+            t_timer.text = (timeLeft).ToString("0");
+            if(timeLeft < 0){
+                int score = gn.Sc(8);
+                go.Setup(score);
+                isUpdateEnable = false;
+            }
         }
     }
 }

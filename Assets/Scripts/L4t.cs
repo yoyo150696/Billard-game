@@ -10,14 +10,23 @@ public class L4t : MonoBehaviour
     public TextMeshProUGUI t_timer;
     public L4go go;
     float timeLeft = 30.0f;
+
+    bool isUpdateEnable = false;
+
+    public void StartTimer(){
+        isUpdateEnable = true;   
+    }
   
     // Update is called once per frame
     void Update()
     {
-        timeLeft -= Time.deltaTime;
-        t_timer.text = (timeLeft).ToString("0");
-        if(timeLeft < 1){
-            go.Setup(gn.Get_score());
+        if(isUpdateEnable){
+            timeLeft -= Time.deltaTime;
+            t_timer.text = (timeLeft).ToString("0");
+            if(timeLeft < 0){
+                isUpdateEnable = false; 
+                go.Setup(gn.Get_score());
+            }
         }
     }
 }
