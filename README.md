@@ -19,6 +19,7 @@ A function that converts the position of the mouse to the known coordinates -
 
  if(Input.GetMouseButtonDown(0)){
             startpoint = cam.ScreenToWorldPoint(Input.mousePosition);
+            }
 
 Conversion of the distance between the clicks of the mouse to force and its addition to the acceleration of the white ball=
 ש
