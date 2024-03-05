@@ -78,7 +78,7 @@ timer function and activate him by a click on the button
             }
         }     
 
-Line to for play the game onlone on itch pllatform - https://yoyo1516.itch.io/billard-game
+Line to for play the game onlone on itch platform - https://yoyo1516.itch.io/billard-game
 
 Enjoy the game:))
         
